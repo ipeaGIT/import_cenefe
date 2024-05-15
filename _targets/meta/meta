@@ -1,0 +1,7 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+detect_year_from_string|function|f2f91e3c972ebe12|||||||||||||||
+download_and_save|stem||2221c81562d6fbaf|8eb288799f4b19d4|-866015277||t19858.7572626257s||0|rds|local|vector|||0.06||argumento path inválido
+download_and_save_cnefe|function|e07df26d45e0b98a|||||||||||||||
+get_files_links|stem|c8f0858c957ed18a|1382ca1aa562d257|cc1960b4fa1f1d09|500636572||t19858.7498430368s|b7427bfdbd8e4ee6|322|rds|local|vector|||0.9||
+list_zipfiles_in_url|function|58de8ed0f324f29a|||||||||||||||
+year|stem|655e2f3113d7c0bb|ddff0d25d8745e7d|ef46db3751d8e999|-1534478466||t19858.7488495582s|8af1149d62b33a4b|54|rds|local|vector|||0.02||
