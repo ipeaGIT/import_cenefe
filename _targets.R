@@ -54,21 +54,23 @@ source("R/utils.R")
 
 # Sequencia de tarefas
 list(
+  # Anos em que a base está disponível
+  tar_target(
+    year,
+    c(2010, 2022)
+  ),
 
-  # anos em que a base esta disponivel
-  tar_target(year, c(2022)),                # add 2010 !!!!!!
-
-  # gerar urls dos arquivos
+  # Gerar URLs dos arquivos
   tar_target(
     name = get_files_links,
-    command = list_zipfiles_in_url(year)
-    ),
+    command = list_zipfiles_in_url(year),
+    pattern = map(year)  # Isso garante que cada ano seja tratado individualmente
+  ),
 
   # Baixar arquivos para pasta data_raw e salvar em .csv e .parquet na pasta data
   tar_target(
     name = download_and_save,
-    command = download_and_save_cnefe(get_files_links)
+    command = download_and_save_cnefe(get_files_links),
+    pattern = map(get_files_links)  # Isso garante que cada link seja tratado individualmente
   )
-
-
-  )
+)

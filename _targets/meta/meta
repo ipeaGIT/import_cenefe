@@ -1,7 +1,13 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-detect_year_from_string|function|f2f91e3c972ebe12|||||||||||||||
-download_and_save|stem||2221c81562d6fbaf|8eb288799f4b19d4|-866015277||t19858.7572626257s||0|rds|local|vector|||0.06||argumento path inválido
-download_and_save_cnefe|function|e07df26d45e0b98a|||||||||||||||
-get_files_links|stem|c8f0858c957ed18a|1382ca1aa562d257|cc1960b4fa1f1d09|500636572||t19858.7498430368s|b7427bfdbd8e4ee6|322|rds|local|vector|||0.9||
-list_zipfiles_in_url|function|58de8ed0f324f29a|||||||||||||||
-year|stem|655e2f3113d7c0bb|ddff0d25d8745e7d|ef46db3751d8e999|-1534478466||t19858.7488495582s|8af1149d62b33a4b|54|rds|local|vector|||0.02||
+detect_year_from_string|function|7e1010acf860e4c3|||||||||||||||
+download_and_save|stem||3f45c25aed6fe7a1|d595e87ec0055830|-997267719||t19858.7572626257s||0|rds|local|vector|||0.23||the condition has length  1
+download_and_save_3ac36cce564f8531|branch||3f45c25aed6fe7a1|d6ad63b9ae62945e|-2071230774||t19865.1503865034s||0|rds|local|vector|download_and_save||0.21||the condition has length  1
+download_and_save_4db28047e9bff90e|branch||3f45c25aed6fe7a1|a6d7db9df86bbb54|1365106181||t19865.2060227874s||0|rds|local|vector|download_and_save||0.25||the condition has length  1
+download_and_save_cnefe|function|f08763d2593a4076|||||||||||||||
+download_and_save_f7b4f814943d5179|branch||3f45c25aed6fe7a1|4455e06f4d9556e4|-330421857||t19865.206426735s||0|rds|local|vector|download_and_save||0.2||the condition has length  1
+extract_url|function|e700f4dc8b01f707|||||||||||||||
+get_files_links|pattern|3e6e740dc70e8ac6|7af8de91ce6b2971||56014134||||0|rds|local|vector||get_files_links_d785d510b758fac5|0||
+get_files_links_8ef0455780c41888|branch|eaa299827a4f106b|7af8de91ce6b2971|df5346db94f56ebc|1607830011||t19865.1503812131s|0c8b2aa18f55762a|303|rds|local|vector|get_files_links||7.83||
+get_files_links_d785d510b758fac5|branch|61f0f4fe2260f7fd|7af8de91ce6b2971|df5346db94f56ebc|748607973||t19865.150384936s|b252084a240eec72|455|rds|local|vector|get_files_links||0.31||
+list_zipfiles_in_url|function|7d61edb764d66042|||||||||||||||
+year|stem|16bebe2d88d541de|010857a9064f572e|2c530c1562a7fbd1|229063247||t19865.2064238292s|d0ec9a5a63f98b43|53|rds|local|vector||year_43a1223249ea92a6|0||

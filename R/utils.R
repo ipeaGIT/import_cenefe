@@ -10,3 +10,11 @@ detect_year_from_string <- function(string){
   yyyy <- yyyy[ yyyy != '2500' ]
   return(yyyy)
 }
+
+extract_url <- function(x){
+  links <- RCurl::getURL(x) |>
+    rvest::read_html() |>
+    rvest::html_nodes(xpath = '//td/a[@href]') |>
+    rvest::html_attr('href')
+  return(links)
+}
