@@ -47,7 +47,7 @@ download_and_save_cnefe <- function(link){
 
 
 
-  if (year == 2010){
+  if (year == 2010) {
 
     library(readr)
     files <- list.files(temp_dir, pattern = '*.txt', full.names = T)
@@ -92,16 +92,17 @@ download_and_save_cnefe <- function(link){
 
   }
 
-  if (year == 2022){
+  if (year == 2022) {
 
     files <- list.files(temp_dir, pattern = '*.csv', full.names = T)
     files <- files[grepl(substr(basename(link),1,2),files)]
 
-    if (grepl("Arquivos_CNEFE",link)){
+    if (grepl("Arquivos_CNEFE",link)) {
       files <- files[grepl(uf,files)]
+
       # Read file
       temp_dt <- data.table::fread(files)
-      data.table::setDT(temp_dt)
+
       names(temp_dt) <- c('code_address','code_state','code_muni','code_district','code_sub_district',
                           'code_sector','num_quadra','num_face','cep','desc_localidade','nom_tipo_seglogr',
                           'nom_titulo_seglogr','nom_seglogr','num_andress','dsc_modificador',
@@ -110,13 +111,13 @@ download_and_save_cnefe <- function(link){
                           'nom_comp_elem5','val_comp_elem5','lat', 'lon','nv_geo_coord',
                           'cod_especie','dsc_estabelecimento','cod_indicador_estab_endereco',
                           'cod_indicador_const_endereco','cod_indicador_finalidade_const','cod_tipo_especi')
-      # cols <- c('code_state','code_muni', 'code_especie','nv_geo_coord', 'lat', 'lon')
-      # temp_dt <- temp_dt[, ..cols]
-    } else {
+
+      } else {
       files <- files[!grepl(uf,files)]
       # Read file
       temp_dt <- data.table::fread(files)
-      data.table::setDT(temp_dt)
+
+      # melhor usar dplyr rename para checar nomes de origem !!!!!
       names(temp_dt) <- c('code_state','code_muni', 'code_especie','lat', 'lon','nv_geo_coord')
       cols <- c('code_state','code_muni', 'code_especie','nv_geo_coord', 'lat', 'lon')
       temp_dt <- temp_dt[, ..cols]

@@ -57,7 +57,7 @@ list(
   # Anos em que a base está disponível
   tar_target(
     year,
-    c(2010, 2022)
+    c( 2022) # 2010
   ),
 
   # Gerar URLs dos arquivos
