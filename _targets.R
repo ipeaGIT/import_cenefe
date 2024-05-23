@@ -2,8 +2,6 @@
 suppressPackageStartupMessages({
   library(targets)
   library(rvest)
-  library(future)
-  library(furrr)
   library(arrow)
   library(data.table)
   library(RCurl)
