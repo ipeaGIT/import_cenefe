@@ -1,6 +1,7 @@
 ## debug
 # link <- tar_read(get_files_links)[4]
 # lapply(X= tar_read(get_files_links) , FUN = download_and_save_cnefe)
+# lapply(X= link , FUN = download_and_save_cnefe)
 
 #> erro no link 2022 para  TO  !!!!!!
 
@@ -142,6 +143,7 @@ download_and_save_cnefe <- function(link){
                                                   showWarnings = FALSE) }
   arrow::write_parquet(temp_dt, paste0(dest_dir,gsub(".zip",".parquet",basename(link))))
 
+  gc()
 }
 
 
