@@ -24,17 +24,18 @@ list(
   tar_target(
     year,
     c(2022) # 2010
-  ),
+  )
 
   # Gerar URLs dos arquivos
-  tar_target(
+  , tar_target(
     name = get_files_links,
     command = list_zipfiles_in_url(year),
     pattern = map(year)  # Isso garante que cada ano seja tratado individualmente
-  ),
+  )
+
 
   # Baixar arquivos para pasta data_raw e salvar em .csv e .parquet na pasta data
-  tar_target(
+  , tar_target(
     name = download_and_save,
     command = download_and_save_cnefe(get_files_links),
     pattern = cross(year, get_files_links)  # Isso garante que cada link seja tratado individualmente

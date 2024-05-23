@@ -6,7 +6,8 @@ list_zipfiles_in_url <- function(year) {
 
   if (year == 2022) {
     ftp <- c("https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Coordenadas_enderecos/UF/",
-             "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/UF/")
+             "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/UF/"
+             )
 
     # harvest links
     links <- lapply(ftp,extract_url)
@@ -33,10 +34,14 @@ list_zipfiles_in_url <- function(year) {
     links <- links[links %like% 'zip']
     links <- links[nchar(links) == 6]
     links <- paste0(ftp,"", links)
+
   }
 
 
 
+  ## se for fazer para cada uf
+  # uf_link <- links[ links %like% uf]
+  # return(uf_link)
 
 
   return(links)

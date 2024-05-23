@@ -5,7 +5,10 @@
 
 #> erro no link 2022 para  TO  !!!!!!
 
-download_and_save_cnefe <- function(link){
+download_and_save_cnefe <- function(all_links){
+
+  process_one_link <- function(link){
+
 
   if (grepl("Arquivos_CNEFE",link)){
     file <- "arquivos"
@@ -145,5 +148,10 @@ download_and_save_cnefe <- function(link){
 
   gc()
 }
+
+
+  lapply(X= all_links , FUN = process_one_link)
+}
+
 
 
