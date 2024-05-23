@@ -70,7 +70,7 @@ download_and_save_cnefe <- function(link){
     column_names <- c(
       'code_state', 'code_muni', 'code_district', 'code_subdistrict',
       'code_sector', 'situacao_setor', 'nom_tipo_seglogr', 'nom_titulo_seglogr',
-      'Nome_logradouro', 'num_andress', 'Modificador_numero',
+      'Nome_logradouro', 'num_adress', 'Modificador_numero',
       'nom_comp_elem1','val_comp_elem1','nom_comp_elem2','val_comp_elem2',
       'nom_comp_elem3','val_comp_elem3','nom_comp_elem4','val_comp_elem4',
       'nom_comp_elem5','val_comp_elem5','nom_comp_elem6','val_comp_elem6',
@@ -105,7 +105,7 @@ download_and_save_cnefe <- function(link){
 
       names(temp_dt) <- c('code_address','code_state','code_muni','code_district','code_sub_district',
                           'code_sector','num_quadra','num_face','cep','desc_localidade','nom_tipo_seglogr',
-                          'nom_titulo_seglogr','nom_seglogr','num_andress','dsc_modificador',
+                          'nom_titulo_seglogr','nom_seglogr','num_adress','dsc_modificador',
                           'nom_comp_elem1','val_comp_elem1','nom_comp_elem2','val_comp_elem2',
                           'nom_comp_elem3','val_comp_elem3','nom_comp_elem4','val_comp_elem4',
                           'nom_comp_elem5','val_comp_elem5','lat', 'lon','nv_geo_coord',
