@@ -1,5 +1,5 @@
 ## debug
-# link <- tar_read(get_files_links)[4]
+# link <- tar_read(get_files_links)[34]
 # lapply(X= tar_read(get_files_links) , FUN = download_and_save_cnefe)
 # lapply(X= link , FUN = download_and_save_cnefe)
 
@@ -24,7 +24,7 @@ download_and_save_cnefe <- function(all_links){
   uf <- sub(".*_([A-Z]{2})\\.zip$|.*/([^/]+)/[^/]+\\.zip$", "\\1\\2", link)
   #message(uf)
 
-  message(paste0("\nProcessing UF: ", uf," (",file,")", '\n'))
+  message(paste0("\nProcessing UF: ", year, " ", uf," (",file,")", '\n'))
 
   # create dir if it has not been created already
   dest_dir <- paste0('./data_raw/',year,"/",file,'/')
@@ -36,16 +36,16 @@ download_and_save_cnefe <- function(all_links){
   dest_dir_uf <- paste0(dest_dir, uf)
   dir.create(path = dest_dir_uf, recursive = TRUE, showWarnings = FALSE)
 
-  tempf <- paste0(dest_dir_uf, '/', basename(link))
+  raw_zip_path <- paste0(dest_dir_uf, '/', basename(link))
   httr::GET(url = link,
             httr::progress(),
-            httr::write_disk(tempf, overwrite = T),
+            httr::write_disk(raw_zip_path, overwrite = T),
             config = httr::config(ssl_verifypeer = FALSE)
   )
 
   ## Unzip original data
   temp_dir <- tempdir()
-  unzip(zipfile = tempf, exdir = temp_dir, overwrite = TRUE)
+  unzip(zipfile = raw_zip_path, exdir = temp_dir, overwrite = TRUE)
 
 
 
@@ -127,6 +127,8 @@ download_and_save_cnefe <- function(all_links){
       temp_dt <- temp_dt[, ..cols]
     }
 
+    # remove the tempo raw file from the temp dir
+    unlink(files, recursive = T)
 
   }
 
@@ -136,7 +138,7 @@ download_and_save_cnefe <- function(all_links){
   if (isFALSE(dir.exists(dest_dir))) { dir.create(dest_dir,
                                                   recursive = T,
                                                   showWarnings = FALSE) }
-  fwrite(temp_dt, file = paste0(dest_dir,gsub(".zip",".csv",basename(link))), row.names = F)
+  data.table::fwrite(temp_dt, file = paste0(dest_dir,gsub(".zip",".csv",basename(link))), row.names = F)
 
   # save in .parquet
   # create dir if it has not been created already
