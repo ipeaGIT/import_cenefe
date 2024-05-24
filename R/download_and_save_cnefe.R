@@ -74,11 +74,11 @@ download_and_save_cnefe <- function(all_links){
     column_names <- c(
       'code_state', 'code_muni', 'code_district', 'code_subdistrict',
       'code_sector', 'situacao_setor', 'nom_tipo_seglogr', 'nom_titulo_seglogr',
-      'Nome_logradouro', 'num_adress', 'Modificador_numero',
+      'nome_logradouro', 'num_adress', 'modificador_numero',
       'nom_comp_elem1','val_comp_elem1','nom_comp_elem2','val_comp_elem2',
       'nom_comp_elem3','val_comp_elem3','nom_comp_elem4','val_comp_elem4',
       'nom_comp_elem5','val_comp_elem5','nom_comp_elem6','val_comp_elem6',
-      'lat', 'lon', 'Localidade', 'Nulo', 'Especie_endereco',
+      'lat', 'lon', 'localidade', 'nulo', 'especie_endereco',
       'identificacao_estabelecimento', 'indicador_endereco',
       'identificacao_domicilio_coletivo', 'num_quadra', 'num_face', 'cep'
     )
@@ -92,6 +92,11 @@ download_and_save_cnefe <- function(all_links){
 
     # Lendo o arquivo com read_fwf do pacote readr e especificando a codificação
     temp_dt <- readr::read_fwf(files, col_positions = pos, locale = readr::locale(encoding = "ISO-8859-1"))
+
+    # convert lat lon to numeric
+    data.table::setDT(temp_dt)
+    temp_dt[, lat := parzer::parse_lat(lat) ]
+    temp_dt[, lon := parzer::parse_lon(lon) ]
 
 
   }
