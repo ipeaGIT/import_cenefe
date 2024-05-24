@@ -17,3 +17,7 @@ get_files_links_d2e74d52|branch|951e12e5436b4cca|1382ca1aa562d257|8e4fe06ea686f9
 get_files_links_d785d510b758fac5|branch|5c03921c7f3460ac|7af8de91ce6b2971|07071584095aa5b4|748607973||t19866.8729086975s|1ae71eaef8b82f2b|456|rds|local|vector|get_files_links||0.41||
 list_zipfiles_in_url|function|ee7d76cd51fb38a9|||||||||||||||
 year|stem|25b0cdcabe97de6c|b81f4578b7f4abb7|2c530c1562a7fbd1|229063247||t19866.9781832364s|86c36464e2e2a367|58|rds|local|vector||year_cd8caaabc45b5c4a*year_43a1223249ea92a6|0||
+extract_url|function|e700f4dc8b01f707
+detect_year_from_string|function|7e1010acf860e4c3
+list_zipfiles_in_url|function|ee7d76cd51fb38a9
+download_and_save_cnefe|function|61a6a0b56eefa065

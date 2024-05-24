@@ -139,7 +139,7 @@ download_and_save_cnefe <- function(all_links){
 
   # save in .csv
   # create dir if it has not been created already
-  dest_dir <- paste0('./data/', year,"/",file, '/csv/')
+  dest_dir <- paste0('./data/csv/', year,"/",file,'/')
   if (isFALSE(dir.exists(dest_dir))) { dir.create(dest_dir,
                                                   recursive = T,
                                                   showWarnings = FALSE) }
@@ -147,7 +147,7 @@ download_and_save_cnefe <- function(all_links){
 
   # save in .parquet
   # create dir if it has not been created already
-  dest_dir <- paste0('./data/',year,"/",file, '/parquet/')
+  dest_dir <- paste0('./data/parquet/', year,"/",file,'/')
   if (isFALSE(dir.exists(dest_dir))) { dir.create(dest_dir,
                                                   recursive = T,
                                                   showWarnings = FALSE) }
