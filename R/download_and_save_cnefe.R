@@ -5,6 +5,8 @@
 
 #> erro no link 2022 para  TO  !!!!!!
 
+
+
 download_and_save_cnefe <- function(all_links){
 
   process_one_link <- function(link){
@@ -45,9 +47,8 @@ download_and_save_cnefe <- function(all_links){
 
   ## Unzip original data
   temp_dir <- tempdir()
-  unzip(zipfile = raw_zip_path, exdir = temp_dir, overwrite = TRUE)
-
-
+  system(paste("unzip", shQuote(raw_zip_path), "-d", shQuote(temp_dir)))
+  #  unzip(zipfile = raw_zip_path, exdir = temp_dir, overwrite = TRUE)
 
 
 
